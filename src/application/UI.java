@@ -7,6 +7,8 @@ import java.util.Scanner;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+import com.sun.tools.javac.comp.Check;
+
 import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPosition;
@@ -56,6 +58,10 @@ public class UI {
 		capturedPieces(captured);
 		System.out.println("Turn: " + chessMatch.getTurn());
 		System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+		System.out.println();
+		if(chessMatch.getCheck()) {
+		System.out.println("CHECK!");
+		}
 	}
 	
 	public static void printBoard(ChessPiece[][] pieces) {
