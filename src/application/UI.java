@@ -4,10 +4,9 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-import com.sun.tools.javac.comp.Check;
+
 
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -43,6 +42,7 @@ public class UI {
 	public static ChessPosition readChessPosition(Scanner sc) {
 		try {
 		String s = sc.nextLine();
+		s = s.toLowerCase();
 		char column = s.charAt(0);
 		int row = Integer.parseInt(s.substring(1)); //cut Char of column and read just row
 		return new ChessPosition(column, row);
